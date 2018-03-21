@@ -1,0 +1,33 @@
+---
+- name: Install GNU utilities
+  homebrew:
+    name: "{{ item }}"
+    install_options: with-default-names
+    state: "{{ package_state }}"
+  with_items:
+    - coreutils
+    - findutils
+    - gnu-tar
+    - gnu-sed
+    - gawk
+    - gnutls
+    - gnu-indent
+    - gnu-getopt
+
+- name: Install Shell
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - bash
+    - pstree
+    - psgrep
+
+
+- name: Install git and helpers
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - git
+    - tig

@@ -1,0 +1,21 @@
+---
+- hosts:
+  - localhost
+  vars:
+    # Pass 'latest' via command line to upgrade packages
+    package_state: present
+  roles:
+    - role: packagemanager
+      tags: pkg
+    - role: utils
+      tags: utils
+    - role: python
+      tags: python
+    - role: ruby
+      tags: ruby
+    - role: docker
+      tags: docker
+    - role: kubernetes
+      tags: kubernetes
+    - role: virtualbox
+      tags: virtualbox

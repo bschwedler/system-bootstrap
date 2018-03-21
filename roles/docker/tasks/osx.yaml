@@ -1,0 +1,11 @@
+---
+- name: Install Docker
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - docker
+    - docker-machine
+
+- name: Set Docker to run at login
+  shell: "brew services start docker-machine"

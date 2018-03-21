@@ -1,0 +1,8 @@
+---
+- name: Install chruby
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - chruby
+    - ruby-install

@@ -1,0 +1,11 @@
+---
+- import_tasks: osx.yaml
+  when: ansible_os_family|lower == 'darwin'
+
+- name: Install Ruby versions
+  shell: "source /usr/local/share/chruby/chruby.sh && chruby {{ item }} || ruby-install ruby {{ item }}"
+  with_items: "{{ ruby_versions }}"
+
+- name: Install bundler ruby versions
+  shell: "source /usr/local/share/chruby/chruby.sh && chruby {{ item }} && gem install bundler"
+  with_items: "{{ ruby_versions }}"

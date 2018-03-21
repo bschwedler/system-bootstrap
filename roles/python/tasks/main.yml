@@ -1,0 +1,17 @@
+---
+- name: Install Ansible
+  pip:
+    name:
+      - ansible
+    executable: pip3
+    extra_args: "--prefix=/usr/local"
+    state: "{{ package_state }}"
+
+- name: Install VirtualEnv tools
+  pip:
+    name:
+      - virtualenv
+      - virtualenv-clone
+      - virtualenvwrapper
+    executable: pip3
+    state: "{{ package_state }}"

@@ -1,0 +1,5 @@
+---
+- name: Install VirtualBox
+  homebrew_cask:
+    name: virtualbox
+    state: "{{ package_state }}"
