@@ -20,9 +20,24 @@
     state: "{{ package_state }}"
   with_items:
     - bash
+    - tmux
+
+- name: Install iterm2
+  homebrew_cask:
+    name: iterm2
+    state: "{{ package_state }}"
+
+- name: Install shell utilities
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
     - pstree
     - psgrep
-
+    - screen
+    - curl
+    - rsync
+    - tree
 
 - name: Install git and helpers
   homebrew:
@@ -31,3 +46,24 @@
   with_items:
     - git
     - tig
+
+- name: Install vim
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - vim
+    - neovim
+
+- name: Install additional utilities
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - ack
+    - jq
+    - httpie
+    - perl
+    - pwgen
+    - speedtest-cli
+    - vault

@@ -9,8 +9,8 @@ if [ "$(uname)" == "Darwin" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     # py3 is now default
     brew install python
-    brew link python --overwrite
-    pip3 install --upgrade pip
+    brew unlink python && brew link python --overwrite
+    pip3 install --upgrade pip setuptools wheel
     pip3 install --install-option="--prefix=/usr/local" ansible
   fi
 fi
