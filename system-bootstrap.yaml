@@ -5,17 +5,24 @@
     # Pass 'latest' via command line to upgrade packages
     package_state: present
   roles:
+
     - role: packagemanager
-      tags: pkg
+      tags: pacakgemanager, pkg, brew
+
     - role: utils
       tags: utils
+
     - role: python
-      tags: python
+      tags: python, py
+
     - role: ruby
-      tags: ruby
+      tags: ruby, rb
+
     - role: docker
       tags: docker
+
     - role: kubernetes
-      tags: kubernetes
+      tags: kubernetes, k8s, kube
+
     - role: virtualbox
       tags: virtualbox
