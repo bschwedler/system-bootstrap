@@ -37,7 +37,10 @@
     - screen
     - curl
     - rsync
+    - telnet
     - tree
+    - watch
+    - wget
 
 - name: Install git and helpers
   homebrew:
@@ -67,3 +70,8 @@
     - pwgen
     - speedtest-cli
     - vault
+
+- name: Install postman
+  homebrew_cask:
+    name: postman
+    state: "{{ package_state }}"
