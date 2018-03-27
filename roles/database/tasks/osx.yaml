@@ -1,0 +1,21 @@
+---
+- name: Install postgres
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - postgresql
+
+- name: Install mysql
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - mysql
+
+- name: Install mongodb
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - mongodb
