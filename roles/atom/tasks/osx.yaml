@@ -1,0 +1,7 @@
+---
+- name: Install Atom
+  homebrew_cask:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - atom

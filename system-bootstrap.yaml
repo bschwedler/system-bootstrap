@@ -21,6 +21,9 @@
     - role: ruby
       tags: ruby, rb
 
+    - role: javascript
+      tags: javascript, js
+
     - role: database
       tags: database, db
 
@@ -32,3 +35,6 @@
 
     - role: virtualbox
       tags: virtualbox
+
+    - role: atom
+      tags: atom, ide

@@ -1,0 +1,8 @@
+---
+- name: Install NPM and Bower
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - npm
+    - bower
