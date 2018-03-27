@@ -12,6 +12,9 @@
     - role: utils
       tags: utils
 
+    - role: libraries
+      tags: libraries, lib
+
     - role: python
       tags: python, py
 

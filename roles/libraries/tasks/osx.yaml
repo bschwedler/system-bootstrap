@@ -1,0 +1,16 @@
+---
+- name: Install pkg-config
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - pkg-config
+
+- name: Install XML libraries
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - libxml2
+    - libxslt
+    - libxmlsec1
