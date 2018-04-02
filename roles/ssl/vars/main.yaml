@@ -1,0 +1,3 @@
+---
+watcher_repo_dir: "{{ ansible_env.HOME }}/CTL/monitoring"
+watcher_ca_cert_dir: "{{ watcher_repo_dir }}/mon-agent/resources/ca"

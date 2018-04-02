@@ -15,6 +15,9 @@
     - role: libraries
       tags: libraries, lib
 
+    - role: ssl
+      tags: ssl
+
     - role: python
       tags: python, py
 
