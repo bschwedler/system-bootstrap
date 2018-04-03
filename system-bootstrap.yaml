@@ -41,3 +41,6 @@
 
     - role: atom
       tags: atom, ide
+
+    - role: media
+      tags: media
