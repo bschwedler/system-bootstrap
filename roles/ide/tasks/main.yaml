@@ -4,6 +4,9 @@
 
 - name: Install Atom packages
   shell: "apm install {{ item }}"
+  tags:
+    - atom
+    - apm
   with_items:
     - atom-beautify
     - autoclose-html

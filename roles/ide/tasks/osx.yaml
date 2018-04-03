@@ -5,3 +5,5 @@
     state: "{{ package_state }}"
   with_items:
     - atom
+  tags:
+    - atom

@@ -39,8 +39,8 @@
     - role: virtualbox
       tags: virtualbox
 
-    - role: atom
-      tags: atom, ide
+    - role: ide
+      tags: ide
 
     - role: media
       tags: media
