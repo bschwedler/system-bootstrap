@@ -58,7 +58,7 @@
     - vim
     - neovim
 
-- name: Install additional utilities
+- name: Install additional CLI utilities
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
@@ -66,12 +66,50 @@
     - ack
     - jq
     - httpie
+    - openvpn
     - perl
     - pwgen
     - speedtest-cli
     - vault
 
+- name: Tap caskroom/versions
+  homebrew_tap:
+    name: caskroom/versions
+    state: present
+
+- name: Install Browers
+  homebrew_cask:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - firefox
+    - firefox-developer-edition
+    - google-chrome
+
+- name: Install Tunnelblick
+  homebrew_cask:
+    name: tunnelblick
+    state: "{{ package_state }}"
+
+- name: Install Citrix Receiver
+  homebrew_cask:
+    name: citrix-receiver
+    state: "{{ package_state }}"
+
 - name: Install postman
   homebrew_cask:
     name: postman
     state: "{{ package_state }}"
+
+- name: Install OSX productivity tools
+  homebrew_cask:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - alfred
+    - flux
+    - flycut
+    - google-hangouts
+    - itsycal
+    - slack
+    - spectacle

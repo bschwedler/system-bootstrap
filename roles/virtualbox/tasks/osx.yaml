@@ -3,3 +3,10 @@
   homebrew_cask:
     name: virtualbox
     state: "{{ package_state }}"
+
+- name: Install Vagrant
+  homebrew_cask:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  with_items:
+    - vagrant
