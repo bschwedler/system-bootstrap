@@ -3,6 +3,6 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - npm
     - bower

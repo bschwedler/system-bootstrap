@@ -7,7 +7,7 @@
   tags:
     - atom
     - apm
-  with_items:
+  loop:
     - atom-beautify
     - autoclose-html
     - git-blame

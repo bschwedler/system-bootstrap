@@ -3,19 +3,19 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - postgresql
 
 - name: Install mysql
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - mysql
 
 - name: Install mongodb
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - mongodb

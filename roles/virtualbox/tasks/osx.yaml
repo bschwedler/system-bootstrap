@@ -8,5 +8,5 @@
   homebrew_cask:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - vagrant

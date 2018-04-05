@@ -4,7 +4,7 @@
     name: "{{ item }}"
     install_options: with-default-names
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - coreutils
     - findutils
     - gnu-tar
@@ -18,7 +18,7 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - bash
     - tmux
 
@@ -31,7 +31,7 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - pstree
     - psgrep
     - screen
@@ -46,7 +46,7 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - git
     - tig
 
@@ -54,7 +54,7 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - vim
     - neovim
 
@@ -62,7 +62,7 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - ack
     - jq
     - httpie
@@ -81,7 +81,7 @@
   homebrew_cask:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - firefox
     - firefox-developer-edition
     - google-chrome
@@ -105,7 +105,7 @@
   homebrew_cask:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - alfred
     - flux
     - flycut

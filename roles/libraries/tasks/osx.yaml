@@ -3,14 +3,14 @@
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - pkg-config
 
 - name: Install XML libraries
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
-  with_items:
+  loop:
     - libxml2
     - libxslt
     - libxmlsec1
