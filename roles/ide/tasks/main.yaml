@@ -1,30 +1,21 @@
 ---
+- import_tasks: fedora.yaml
+  when: ansible_distribution|lower == 'fedora'
+  become: yes
+
 - import_tasks: osx.yaml
   when: ansible_os_family|lower == 'darwin'
 
+- name: Install VSCode extensions
+  shell: "code --install-extension {{ item }}"
+  tags:
+    - vscode
+  loop: "{{ vscode_extensions }}"
+
 - name: Install Atom packages
   shell: "apm install {{ item }}"
+  ignore_errors: yes
   tags:
     - atom
     - apm
-  loop:
-    - atom-beautify
-    - autoclose-html
-    - git-blame
-    - language-lua
-    - language-nginx
-    - linter
-    - linter-csslint
-    - linter-eslint
-    - linter-flake8
-    - linter-golinter
-    - linter-js-yaml
-    - linter-lua
-    - linter-markdown
-    - linter-pep8
-    - linter-pycodestyle
-    - linter-rubocop
-    - linter-ui-default
-    - linter-xmllint
-    - solarized-dark-ui
-    - vim-mode-plus
+  loop: "{{ atom_packages }}"

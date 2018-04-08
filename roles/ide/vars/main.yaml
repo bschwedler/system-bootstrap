@@ -1,0 +1,40 @@
+---
+
+vscode_extensions:
+  - vscodevim.vim
+  - Braver.vscode-solarized
+  - eamodio.gitlens
+  - formulahendry.auto-close-tag
+  - redhat.vscode-yaml
+  - PeterJausovec.vscode-docker
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - lukehoban.Go
+  - ms-python.python
+  - rebornix.Ruby
+  - misogi.ruby-rubocop
+  - EQuimper.react-native-react-redux
+  - dbaeumer.vscode-eslint
+  - redhat.java
+  - kosz78.nim
+
+atom_packages:
+  - atom-beautify
+  - autoclose-html
+  - git-blame
+  - language-lua
+  - language-nginx
+  - linter
+  - linter-csslint
+  - linter-eslint
+  - linter-flake8
+  - linter-golinter
+  - linter-js-yaml
+  - linter-lua
+  - linter-markdown
+  - linter-pep8
+  - linter-pycodestyle
+  - linter-rubocop
+  - linter-ui-default
+  - linter-xmllint
+  - solarized-dark-ui
+  - vim-mode-plus
