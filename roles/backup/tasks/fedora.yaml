@@ -1,0 +1,22 @@
+---
+- name: Install python2 libraries
+  pip:
+    name:
+      - b2
+    executable: pip2
+    state: "{{ package_state }}"
+
+- name: Install python3 libraries
+  pip:
+    name:
+      - b2
+    executable: pip3
+    state: "{{ package_state }}"
+
+- name: Install duply
+  dnf:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - duplicity
+    - duply

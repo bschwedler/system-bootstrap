@@ -39,6 +39,9 @@
     - role: virtualbox
       tags: virtualbox
 
+    - role: backup
+      tags: backup
+
     - role: ide
       tags: ide
 

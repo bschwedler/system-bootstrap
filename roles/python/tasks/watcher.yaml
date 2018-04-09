@@ -1,0 +1,17 @@
+---
+- name: Setup Ansible 2.2.0.0 virtualenv
+  pip:
+    name: ansible
+    version: 2.2.0.0
+    virtualenv: "{{ ansible_env.HOME }}/.virtualenvs/ansible-2.2.0.0"
+    virtualenv_python: python2.7
+    virtualenv_site_packages: no
+    state: "{{ package_state }}"
+
+- name: Install netaddr for ansible-2.2.0.0
+  pip:
+    name: netaddr
+    virtualenv: "{{ ansible_env.HOME }}/.virtualenvs/ansible-2.2.0.0"
+    virtualenv_python: python2.7
+    virtualenv_site_packages: no
+    state: "{{ package_state }}"

@@ -1,5 +1,4 @@
 ---
-
 - import_tasks: osx.yaml
   when: ansible_os_family|lower == 'darwin'
 
@@ -10,6 +9,7 @@
     executable: pip3
     extra_args: "--prefix=/usr/local"
     state: "{{ package_state }}"
+  become: "{{ ansible_os_family|lower != 'darwin' }}"
 
 - name: Install VirtualEnv tools
   pip:
@@ -19,6 +19,7 @@
       - virtualenvwrapper
     executable: pip3
     state: "{{ package_state }}"
+  become: "{{ ansible_os_family|lower != 'darwin' }}"
 
 - name: Install testing tools
   pip:
@@ -32,20 +33,7 @@
       - pytest-pylint
     executable: pip3
     state: "{{ package_state }}"
+  become: "{{ ansible_os_family|lower != 'darwin' }}"
 
-- name: Setup Ansible 2.2.0.0 virtualenv
-  pip:
-    name: ansible
-    version: 2.2.0.0
-    virtualenv: "{{ ansible_env.HOME }}/.virtualenvs/ansible-2.2.0.0"
-    virtualenv_python: python2.7
-    virtualenv_site_packages: no
-    state: "{{ package_state }}"
-
-- name: Install netaddr for ansible-2.2.0.0
-  pip:
-    name: netaddr
-    virtualenv: "{{ ansible_env.HOME }}/.virtualenvs/ansible-2.2.0.0"
-    virtualenv_python: python2.7
-    virtualenv_site_packages: no
-    state: "{{ package_state }}"
+- import_tasks: watcher.yaml
+  when: ansible_os_family|lower == 'darwin'
