@@ -1,11 +1,10 @@
 ---
+- import_tasks: fedora.yaml
+  when: ansible_distribution|lower == 'fedora'
+  become: yes
+
 - import_tasks: osx.yaml
   when: ansible_os_family|lower == 'darwin'
 
-- name: Install Ruby versions
-  shell: "source /usr/local/share/chruby/chruby.sh && chruby {{ item }} || ruby-install ruby {{ item }}"
-  loop: "{{ ruby_versions }}"
-
-- name: Install bundler ruby versions
-  shell: "source /usr/local/share/chruby/chruby.sh && chruby {{ item }} && gem install bundler"
-  loop: "{{ ruby_versions }}"
+- import_tasks: watcher.yaml
+  when: ansible_os_family|lower == 'darwin'
