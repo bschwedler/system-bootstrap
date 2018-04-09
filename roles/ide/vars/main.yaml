@@ -2,20 +2,37 @@
 
 vscode_extensions:
   - vscodevim.vim
+  - EditorConfig.EditorConfig
   - Braver.vscode-solarized
   - eamodio.gitlens
   - formulahendry.auto-close-tag
+  - formulahendry.auto-rename-tag
+  - formulahendry.code-runner
+  - DavidAnson.vscode-markdownlint
   - redhat.vscode-yaml
   - PeterJausovec.vscode-docker
   - ms-kubernetes-tools.vscode-kubernetes-tools
   - lukehoban.Go
   - ms-python.python
   - rebornix.Ruby
+  - castwide.solargraph
   - misogi.ruby-rubocop
+  - christian-kohler.npm-intellisense
+  - mgmcdermott.vscode-language-babel
   - EQuimper.react-native-react-redux
   - dbaeumer.vscode-eslint
+  - pranaygp.vscode-css-peek
+  - cssho.vscode-svgviewer
   - redhat.java
+  - GabrielBB.vscode-lombok
+  - vscjava.vscode-maven
+  - subtixx.mtasa-lua
   - kosz78.nim
+  - torn4dom4n.latex-support
+  - humao.rest-client
+  - PKief.material-icon-theme
+  - robertohuertasm.vscode-icons
+  - sozercan.slack
 
 atom_packages:
   - atom-beautify
