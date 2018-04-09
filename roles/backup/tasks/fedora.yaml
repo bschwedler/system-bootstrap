@@ -10,7 +10,7 @@
   pip:
     name:
       - b2
-    executable: pip3
+    executable: /usr/local/bin/pip3
     state: "{{ package_state }}"
 
 - name: Install duply

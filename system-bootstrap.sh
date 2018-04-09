@@ -11,14 +11,14 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install python
     brew unlink python && brew link python --overwrite
   fi
-  pip3 install --upgrade pip setuptools wheel
-  pip3 install --install-option="--prefix=/usr/local" ansible
+  /usr/local/bin/pip3 install --upgrade pip setuptools wheel
+  /usr/local/bin/pip3 install --install-option="--prefix=/usr/local" ansible
 fi
 
 if [ -f "/etc/fedora-release" ] ; then
   sudo dnf install python3-pip
-  sudo env "PATH=${PATH}" pip3 install --upgrade pip setuptools wheel
-  sudo env "PATH=${PATH}" pip3 install --install-option="--prefix=/usr/local" ansible
+  sudo env "PATH=${PATH}" /usr/local/bin/pip3 install --upgrade pip setuptools wheel
+  sudo env "PATH=${PATH}" /usr/local/bin/pip3 install --install-option="--prefix=/usr/local" ansible
 fi
 
 ansible-playbook -i localhost.ini -K system-bootstrap.yaml
