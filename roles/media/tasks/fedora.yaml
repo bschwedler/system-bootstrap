@@ -1,0 +1,27 @@
+---
+- name: Install Metia Playser
+  dnf:
+    name:
+      - clementine
+      - mplayer
+      - vlc
+    state: "{{ package_state }}"
+
+- name: Install media cloning tools
+  dnf:
+    name:
+      - asunder
+      - k3b
+      - k9copy
+    state: "{{ package_state }}"
+
+- name: Install media editing tools
+  dnf:
+    name:
+      - ardour5
+      - ardour5-audiobackend-alsa
+      - ardour5-audiobackend-alsa
+      - audacity
+      - ffmpeg
+      - easytag
+    state: "{{ package_state }}"
