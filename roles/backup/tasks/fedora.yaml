@@ -15,8 +15,7 @@
 
 - name: Install duply
   dnf:
-    name: "{{ item }}"
+    name:
+      - duplicity
+      - duply
     state: "{{ package_state }}"
-  loop:
-    - duplicity
-    - duply

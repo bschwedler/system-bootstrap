@@ -1,16 +1,14 @@
 ---
 - name: Install Ruby
   dnf:
-    name: "{{ item }}"
+    name:
+      - ruby
+      - ruby-devel
+      - rubygem-json
     state: "{{ package_state }}"
-  loop:
-    - ruby
-    - ruby-devel
-    - rubygem-json
-
 
 - name: Install Bundler.
-  gem: 
-    name: bundler 
+  gem:
+    name: bundler
     state: "{{ package_state }}"
     user_install: no

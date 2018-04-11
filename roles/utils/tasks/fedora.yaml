@@ -1,42 +1,38 @@
 ---
 - name: Install shell utilities
   dnf:
-    name: "{{ item }}"
+    name:
+      - screen
+      - curl
+      - rsync
+      - telnet
+      - tmux
+      - tree
+      - wget
     state: "{{ package_state }}"
-  loop:
-    - screen
-    - curl
-    - rsync
-    - telnet
-    - tmux
-    - tree
-    - wget
 
 - name: Install git and helpers
   dnf:
-    name: "{{ item }}"
+    name:
+      - git
+      - tig
     state: "{{ package_state }}"
-  loop:
-    - git
-    - tig
 
 - name: Install vim
   dnf:
-    name: "{{ item }}"
+    name:
+      - vim
+      - neovim
     state: "{{ package_state }}"
-  loop:
-    - vim
-    - neovim
 
 - name: Install additional CLI utilities
   dnf:
-    name: "{{ item }}"
+    name:
+      - ack
+      - jq
+      - httpie
+      - openvpn
+      - perl
+      - pwgen
+      - speedtest-cli
     state: "{{ package_state }}"
-  loop:
-    - ack
-    - jq
-    - httpie
-    - openvpn
-    - perl
-    - pwgen
-    - speedtest-cli
