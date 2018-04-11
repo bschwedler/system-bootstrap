@@ -1,0 +1,6 @@
+---
+- name: Install Docker
+  dnf:
+    name:
+      - docker
+    state: "{{ package_state }}"

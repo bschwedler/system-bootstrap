@@ -1,3 +1,7 @@
 ---
+- import_tasks: fedora.yaml
+  when: ansible_distribution|lower == 'fedora'
+  become: yes
+
 - import_tasks: osx.yaml
   when: ansible_os_family|lower == 'darwin'
