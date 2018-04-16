@@ -14,6 +14,9 @@ vscode_extensions:
   - ms-kubernetes-tools.vscode-kubernetes-tools
   - lukehoban.Go
   - ms-python.python
+  - wholroyd.jinja
+  - vscoss.vscode-ansible
+  - dhoeric.ansible-vault
   - rebornix.Ruby
   - castwide.solargraph
   - misogi.ruby-rubocop
