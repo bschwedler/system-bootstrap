@@ -2,27 +2,27 @@
 - name: Install Atom
   homebrew_cask:
     name: atom
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
   tags:
     - atom
 
 - name: Install VS Code
   homebrew_cask:
     name: visual-studio-code
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
   tags:
     - vscode
 
 - name: Install PyCharm
   homebrew_cask:
     name: pycharm-ce
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
   tags:
     - pycharm
 
 - name: Install IntelliJ
   homebrew_cask:
     name: intellij-idea
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
   tags:
     - intellij

@@ -4,6 +4,14 @@
   vars:
     # Pass 'latest' via command line to upgrade packages
     package_state: present
+    package_state_cask: "{{ package_state }}"
+
+  pre_tasks:
+    - name: Set package state variables
+      set_fact:
+        package_state_cask: upgraded
+      when: package_state is latest
+
   roles:
 
     - role: packagemanager

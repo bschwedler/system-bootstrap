@@ -25,7 +25,7 @@
 - name: Install iterm2
   homebrew_cask:
     name: iterm2
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
 
 - name: Install shell utilities
   homebrew:
@@ -80,7 +80,7 @@
 - name: Install Browers
   homebrew_cask:
     name: "{{ item }}"
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
   loop:
     - firefox
     - firefox-developer-edition
@@ -89,22 +89,22 @@
 - name: Install Tunnelblick
   homebrew_cask:
     name: tunnelblick
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
 
 - name: Install Citrix Receiver
   homebrew_cask:
     name: citrix-receiver
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
 
 - name: Install postman
   homebrew_cask:
     name: postman
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
 
 - name: Install OSX productivity tools
   homebrew_cask:
     name: "{{ item }}"
-    state: "{{ package_state }}"
+    state: "{{ package_state_cask }}"
   loop:
     - alfred
     - flux
