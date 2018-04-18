@@ -13,45 +13,17 @@
       when: package_state is latest
 
   roles:
-
-    - role: packagemanager
-      tags: pacakgemanager, pkg, brew
-
-    - role: utils
-      tags: utils
-
-    - role: libraries
-      tags: libraries, lib
-
-    - role: ssl
-      tags: ssl
-
-    - role: python
-      tags: python, py
-
-    - role: ruby
-      tags: ruby, rb
-
-    - role: javascript
-      tags: javascript, js
-
-    - role: database
-      tags: database, db
-
-    - role: docker
-      tags: docker
-
-    - role: kubernetes
-      tags: kubernetes, k8s, kube
-
-    - role: virtualbox
-      tags: virtualbox
-
-    - role: backup
-      tags: backup
-
-    - role: ide
-      tags: ide
-
-    - role: media
-      tags: media
+    - {role: packagemanager, tags: pacakgemanager, pkg, brew}
+    - {role: utils, tags: utils}
+    - {role: libraries, tags: libraries, lib}
+    - {role: ssl, tags: ssl}
+    - {role: python, tags: python, py}
+    - {role: ruby, tags: ruby, rb}
+    - {role: javascript, tags: javascript, js}
+    - {role: database, tags: database, db}
+    - {role: docker, tags: docker}
+    - {role: kubernetes, tags: kubernetes, k8s, kube}
+    - {role: virtualbox, tags: virtualbox}
+    - {role: backup, tags: backup}
+    - {role: ide, tags: ide}
+    - {role: media, tags: media}
