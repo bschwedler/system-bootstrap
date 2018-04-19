@@ -20,6 +20,7 @@
     - {role: python, tags: python, py}
     - {role: ruby, tags: ruby, rb}
     - {role: javascript, tags: javascript, js}
+    - {role: lua, tags: lua}
     - {role: database, tags: database, db}
     - {role: docker, tags: docker}
     - {role: kubernetes, tags: kubernetes, k8s, kube}
