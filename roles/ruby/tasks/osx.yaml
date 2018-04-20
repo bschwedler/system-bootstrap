@@ -1,8 +1,19 @@
 ---
+- name: Install ruby
+  homebrew:
+    name:
+      - ruby
+    state: "{{ package_state }}"
+
+- name: Link ruby
+  homebrew:
+    name:
+      - ruby
+    state: linked
+
 - name: Install chruby
   homebrew:
-    name: "{{ item }}"
+    name:
+      - chruby
+      - ruby-install
     state: "{{ package_state }}"
-  loop:
-    - chruby
-    - ruby-install
