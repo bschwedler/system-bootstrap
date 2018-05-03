@@ -66,6 +66,7 @@
     - ack
     - jq
     - httpie
+    - lastpass-cli
     - openvpn
     - perl
     - pwgen
@@ -111,6 +112,7 @@
     - flycut
     - google-hangouts
     - itsycal
+    - lastpass
     - slack
     - spectacle
     - yakyak
