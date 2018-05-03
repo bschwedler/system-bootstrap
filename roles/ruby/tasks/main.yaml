@@ -8,3 +8,15 @@
 
 - import_tasks: watcher.yaml
   when: ansible_os_family|lower == 'darwin'
+
+- name: Install common gems
+  gem:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+    user_install: no
+  loop:
+    - bundler
+    - json
+    - rspec
+    - rubocop
+    - solargraph
