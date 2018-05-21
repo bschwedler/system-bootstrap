@@ -36,6 +36,7 @@ vscode_extensions:
   - PKief.material-icon-theme
   - robertohuertasm.vscode-icons
   - sozercan.slack
+  - HookyQR.beautify
 
 atom_packages:
   - atom-beautify
