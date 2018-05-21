@@ -42,6 +42,11 @@
     - watch
     - wget
 
+- name: Tap git-duet/tap
+  homebrew_tap:
+    name: git-duet/tap
+    state: present
+
 - name: Install git and helpers
   homebrew:
     name: "{{ item }}"
@@ -49,6 +54,7 @@
   loop:
     - git
     - tig
+    - git-duet
 
 - name: Install vim
   homebrew:
