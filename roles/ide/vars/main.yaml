@@ -12,7 +12,7 @@ vscode_extensions:
   - redhat.vscode-yaml
   - PeterJausovec.vscode-docker
   - ms-kubernetes-tools.vscode-kubernetes-tools
-  - lukehoban.Go
+  - ms-vscode.Go
   - ms-python.python
   - wholroyd.jinja
   - vscoss.vscode-ansible
@@ -37,6 +37,7 @@ vscode_extensions:
   - robertohuertasm.vscode-icons
   - sozercan.slack
   - HookyQR.beautify
+  - alexkrechik.cucumberautocomplete
 
 atom_packages:
   - atom-beautify

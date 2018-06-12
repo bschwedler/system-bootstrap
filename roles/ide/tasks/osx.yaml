@@ -8,8 +8,16 @@
 
 - name: Install VS Code
   homebrew_cask:
-    name: visual-studio-code
+    name: visual-studio-code-insiders
     state: "{{ package_state_cask }}"
+  tags:
+    - vscode
+
+- name: Link VS Code
+  file:
+    src: "/usr/local/bin/code-insiders"
+    dest: "/usr/local/bin/code"
+    state: link
   tags:
     - vscode
 
