@@ -10,7 +10,7 @@
     - name: Set package state variables
       set_fact:
         package_state_cask: upgraded
-      when: package_state is latest
+      when: package_state == "latest"
 
   roles:
     - {role: packagemanager, tags: pacakgemanager, pkg, brew}

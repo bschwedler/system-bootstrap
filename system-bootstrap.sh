@@ -8,11 +8,11 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "Install Homebrew & Ansible"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     # py3 is now default
-    brew install python
+    brew upgrade python || brew install python
     brew unlink python && brew link python --overwrite
   fi
   /usr/local/bin/pip3 install --upgrade pip setuptools wheel
-  /usr/local/bin/pip3 install --install-option="--prefix=/usr/local" ansible
+  /usr/local/bin/pip3 install --upgrade --install-option="--prefix=/usr/local" ansible
 fi
 
 if [ -f "/etc/fedora-release" ] ; then
