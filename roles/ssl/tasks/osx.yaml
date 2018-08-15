@@ -5,14 +5,3 @@
     state: "{{ package_state }}"
   loop:
     - openssl
-
-- name: Ensure local certs directory exists
-  copy:
-    src: "{{ watcher_ca_cert_dir }}/{{ item }}"
-    dest: "/usr/local/etc/openssl/certs/{{ item }}"
-  loop:
-    - 'ca.dev.watcher.ctl.io.crt'
-    - 'ca.infra.watcher.ctl.io.crt'
-
-- name: Rehash openssl certs
-  shell: /usr/local/opt/openssl/bin/c_rehash

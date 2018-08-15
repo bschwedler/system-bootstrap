@@ -1,8 +1,0 @@
----
-- name: Install Ruby versions
-  shell: "source /usr/local/share/chruby/chruby.sh && chruby {{ item }} || ruby-install ruby {{ item }}"
-  loop: "{{ ruby_versions }}"
-
-- name: Install bundler ruby versions
-  shell: "source /usr/local/share/chruby/chruby.sh && chruby {{ item }} && gem install bundler"
-  loop: "{{ ruby_versions }}"

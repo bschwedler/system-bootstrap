@@ -34,6 +34,3 @@
     executable: /usr/local/bin/pip3
     state: "{{ package_state }}"
   become: "{{ ansible_os_family|lower != 'darwin' }}"
-
-- import_tasks: watcher.yaml
-  when: ansible_os_family|lower == 'darwin'

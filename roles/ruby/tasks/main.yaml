@@ -6,9 +6,6 @@
 - import_tasks: osx.yaml
   when: ansible_os_family|lower == 'darwin'
 
-- import_tasks: watcher.yaml
-  when: ansible_os_family|lower == 'darwin'
-
 - name: Install common gems
   gem:
     name: "{{ item }}"
