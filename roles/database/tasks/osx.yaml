@@ -19,3 +19,10 @@
     state: "{{ package_state }}"
   loop:
     - mongodb
+
+- name: Install influxdb
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - influxdb
