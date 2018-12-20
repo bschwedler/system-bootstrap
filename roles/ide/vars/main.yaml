@@ -1,43 +1,47 @@
 ---
 
 vscode_extensions:
-  - vscodevim.vim
-  - EditorConfig.EditorConfig
-  - Braver.vscode-solarized
+  - alexkrechik.cucumberautocomplete
+  - vraver.vscode-solarized
+  - castwide.solargraph
+  - christian-kohler.npm-intellisense
+  - cssho.vscode-svgviewer
+  - davidanson.vscode-markdownlint
+  - dbaeumer.vscode-eslint
+  - dhoeric.ansible-vault
   - eamodio.gitlens
-  - formulahendry.auto-close-tag
+  - editorconfig.editorconfig
+  - equimper.react-native-react-redux
+  - formulahendry.auto-close-ta
   - formulahendry.auto-rename-tag
   - formulahendry.code-runner
-  - DavidAnson.vscode-markdownlint
-  - redhat.vscode-yaml
-  - PeterJausovec.vscode-docker
-  - ms-kubernetes-tools.vscode-kubernetes-tools
-  - ms-vscode.Go
-  - ms-python.python
-  - wholroyd.jinja
-  - vscoss.vscode-ansible
-  - dhoeric.ansible-vault
-  - rebornix.Ruby
-  - castwide.solargraph
-  - misogi.ruby-rubocop
-  - christian-kohler.npm-intellisense
-  - mgmcdermott.vscode-language-babel
-  - EQuimper.react-native-react-redux
-  - dbaeumer.vscode-eslint
-  - pranaygp.vscode-css-peek
-  - cssho.vscode-svgviewer
-  - redhat.java
-  - GabrielBB.vscode-lombok
-  - vscjava.vscode-maven
-  - subtixx.mtasa-lua
-  - kosz78.nim
-  - torn4dom4n.latex-support
+  - gabrielbb.vscode-lombok
+  - henoc.svgeditor
+  - hookyqr.beautify
   - humao.rest-client
-  - PKief.material-icon-theme
+  - james-yu.latex-workshop
+  - kosz78.nim
+  - mgmcdermott.vscode-language-babel
+  - misogi.ruby-rubocop
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - ms-python.python
+  - ms-vscode.cpptools
+  - ms-vscode.go
+  - ms-vscode.powershell
+  - peterjausovec.vscode-docker
+  - pkief.material-icon-theme
+  - pranaygp.vscode-css-peek
+  - rebornix.Ruby
+  - redhat.java
+  - redhat.vscode-yaml
   - robertohuertasm.vscode-icons
   - sozercan.slack
-  - HookyQR.beautify
-  - alexkrechik.cucumberautocomplete
+  - subtixx.mtasa-lua
+  - torn4dom4n.latex-support
+  - vscodevim.vim
+  - vscjava.vscode-java-pack
+  - vscoss.vscode-ansible
+  - wholroyd.jinja
 
 atom_packages:
   - atom-beautify

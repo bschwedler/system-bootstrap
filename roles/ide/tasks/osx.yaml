@@ -20,17 +20,3 @@
     state: link
   tags:
     - vscode
-
-- name: Install PyCharm
-  homebrew_cask:
-    name: pycharm-ce
-    state: "{{ package_state_cask }}"
-  tags:
-    - pycharm
-
-- name: Install IntelliJ
-  homebrew_cask:
-    name: intellij-idea
-    state: "{{ package_state_cask }}"
-  tags:
-    - intellij
