@@ -79,6 +79,22 @@
     - speedtest-cli
     - vault
 
+- name: Install cloud CLI tools
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - awscli
+    - s3cmd
+
+- name: Install build tools
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - autoconf
+    - automake
+
 - name: Tap caskroom/versions
   homebrew_tap:
     name: caskroom/versions
@@ -98,10 +114,13 @@
     name: tunnelblick
     state: "{{ package_state_cask }}"
 
-- name: Install Citrix Receiver
+- name: Install Citrix Tools
   homebrew_cask:
-    name: citrix-receiver
+    name: "{{ item }}"
     state: "{{ package_state_cask }}"
+  loop:
+    - citrix-receiver
+    - citrix-workspace
 
 - name: Install postman
   homebrew_cask:
@@ -117,6 +136,7 @@
     - flux
     - flycut
     - google-hangouts
+    - grandperspective
     - itsycal
     - lastpass
     - slack
