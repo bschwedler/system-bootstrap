@@ -2,7 +2,7 @@
 
 vscode_extensions:
   - alexkrechik.cucumberautocomplete
-  - vraver.vscode-solarized
+  - braver.vscode-solarized
   - castwide.solargraph
   - christian-kohler.npm-intellisense
   - cssho.vscode-svgviewer
@@ -12,7 +12,7 @@ vscode_extensions:
   - eamodio.gitlens
   - editorconfig.editorconfig
   - equimper.react-native-react-redux
-  - formulahendry.auto-close-ta
+  - formulahendry.auto-close-tag
   - formulahendry.auto-rename-tag
   - formulahendry.code-runner
   - gabrielbb.vscode-lombok
@@ -21,6 +21,7 @@ vscode_extensions:
   - humao.rest-client
   - james-yu.latex-workshop
   - kosz78.nim
+  - lextudio.restructuredtext
   - mgmcdermott.vscode-language-babel
   - misogi.ruby-rubocop
   - ms-kubernetes-tools.vscode-kubernetes-tools

@@ -121,6 +121,7 @@
   loop:
     - citrix-receiver
     - citrix-workspace
+  ignore_errors: true
 
 - name: Install postman
   homebrew_cask:
