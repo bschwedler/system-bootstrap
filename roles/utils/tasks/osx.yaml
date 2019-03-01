@@ -2,7 +2,6 @@
 - name: Install GNU utilities
   homebrew:
     name: "{{ item }}"
-    install_options: with-default-names
     state: "{{ package_state }}"
   loop:
     - coreutils
@@ -13,6 +12,21 @@
     - gnutls
     - gnu-indent
     - gnu-getopt
+    - gnu-which
+
+- name: Symlink GNU utilities
+  file:
+    src: "/usr/local/bin/g{{ item }}"
+    dest: "/usr/local/bin/{{ item }}"
+    state: link
+  loop:
+    - awk
+    - find
+    - indent
+    - sed
+    - tar
+    - which
+    - xargs
 
 - name: Install Shell
   homebrew:
