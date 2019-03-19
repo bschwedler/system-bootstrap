@@ -39,10 +39,10 @@ vscode_extensions:
   - rebornix.Ruby
   - redhat.java
   - redhat.vscode-yaml
-  - robertohuertasm.vscode-icons
   - sozercan.slack
   - subtixx.mtasa-lua
   - torn4dom4n.latex-support
+  - vscode-icons-team.vscode-icons
   - vscodevim.vim
   - vscjava.vscode-java-pack
   - vscoss.vscode-ansible
