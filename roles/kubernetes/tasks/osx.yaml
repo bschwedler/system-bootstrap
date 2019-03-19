@@ -12,9 +12,3 @@
     url: "{{ kubectl_watcher_download_url_osx }}"
     dest: "{{ ansible_env.HOME }}/local/bin/kubectl-{{ kubectl_watcher_version }}"
     mode: 0755
-
-- name: "Symlink for kubectl {{ kubectl_watcher_version }}"
-  file:
-    src: "{{ ansible_env.HOME }}/local/bin/kubectl-{{ kubectl_watcher_version }}"
-    dest: "{{ ansible_env.HOME }}/local/bin/kubectl"
-    state: link
