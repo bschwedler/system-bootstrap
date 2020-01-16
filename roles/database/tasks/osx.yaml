@@ -13,12 +13,13 @@
   loop:
     - mysql
 
-- name: Install mongodb
+- name: Install mongodb and tools
   homebrew:
     name: "{{ item }}"
     state: "{{ package_state }}"
   loop:
     - mongodb
+    - robo-3t
 
 - name: Install influxdb
   homebrew:
@@ -26,3 +27,17 @@
     state: "{{ package_state }}"
   loop:
     - influxdb
+
+- name: Install redis
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - redis
+
+- name: Install sqlite
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - sqlite

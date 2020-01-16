@@ -84,9 +84,12 @@
     state: "{{ package_state }}"
   loop:
     - ack
+    - cadaver
+    - dos2unix
     - jq
     - httpie
     - lastpass-cli
+    - lftp
     - openvpn
     - perl
     - pwgen
@@ -101,6 +104,13 @@
     - awscli
     - s3cmd
 
+- name: Install cloud CLI casks
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - google-cloud-sdk
+
 - name: Install build tools
   homebrew:
     name: "{{ item }}"
@@ -108,6 +118,7 @@
   loop:
     - autoconf
     - automake
+    - cdrtools
 
 - name: Tap caskroom/versions
   homebrew_tap:
@@ -142,18 +153,27 @@
     name: postman
     state: "{{ package_state_cask }}"
 
+- name: Install communication tools
+  homebrew_cask:
+    name: "{{ item }}"
+    state: "{{ package_state_cask }}"
+  loop:
+    - discord
+    - microsoft-teams
+    - slack
+    - skype
+    - skype-for-business
+
 - name: Install OSX productivity tools
   homebrew_cask:
     name: "{{ item }}"
     state: "{{ package_state_cask }}"
   loop:
     - alfred
+    - authy
     - flux
     - flycut
-    - google-hangouts
     - grandperspective
     - itsycal
     - lastpass
-    - slack
     - spectacle
-    - yakyak

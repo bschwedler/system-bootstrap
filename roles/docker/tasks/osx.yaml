@@ -6,6 +6,7 @@
   loop:
     - docker
     - docker-machine
+    - dive
 
 - name: Set Docker to run at login
   shell: "brew services start docker-machine"

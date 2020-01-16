@@ -5,7 +5,7 @@
     state: "{{ package_state }}"
   loop:
     - kubernetes-cli
-    - kubernetes-helm
+    - helm
 
 - name: "Install kubectl {{ kubectl_watcher_version }}"
   get_url:

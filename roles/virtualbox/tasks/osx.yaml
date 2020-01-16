@@ -1,8 +1,11 @@
 ---
 - name: Install VirtualBox
   homebrew_cask:
-    name: virtualbox
+    name: "{{ item }}"
     state: "{{ package_state_cask }}"
+  loop:
+    - virtualbox
+    - virtualbox-extension-pack
 
 - name: Install Vagrant
   homebrew_cask:
