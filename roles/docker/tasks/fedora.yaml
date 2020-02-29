@@ -1,22 +1,8 @@
 ---
-- name: Add Docker Repository
-  yum_repository:
-    name: docker-ce
-    description: Docker CE
-    baseurl:  https://download.docker.com/linux/fedora/docker-ce.repo
-    gpgcheck: yes
-    gpgkey: https://download.docker.com/linux/fedora/gpg
-    enabled: yes
-
-- name: Install Docker
+- name: Install Podman
   dnf:
     name:
-      - docker-ce
+      - podman
+      - podman-docker
     state: "{{ package_state }}"
 
-- name: Enable and Start Docker service
-  systemd:
-    name: docker.service
-    enabled: yes
-    state: started
-    masked: no

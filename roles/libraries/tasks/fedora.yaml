@@ -1,0 +1,8 @@
+---
+- name: Install Libraries
+  dnf:
+    name:
+      - zlib
+      - zlib-devel
+    state: "{{ package_state }}"
+

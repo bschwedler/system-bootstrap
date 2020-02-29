@@ -16,9 +16,9 @@ if [ "$(uname)" == "Darwin" ]; then
 fi
 
 if [ -f "/etc/fedora-release" ] ; then
-  sudo dnf install python3-pip
-  sudo env "PATH=${PATH}" /usr/local/bin/pip3 install --upgrade pip setuptools wheel
-  sudo env "PATH=${PATH}" /usr/local/bin/pip3 install --install-option="--prefix=/usr/local" ansible
+  sudo dnf install python3-devel python3-pip gcc libffi-devel openssl-devel
+  sudo env "PATH=${PATH}" /usr/bin/pip3 install --upgrade pip setuptools wheel
+  sudo env "PATH=${PATH}" /usr/bin/pip3 install --prefix=/usr/local ansible
 fi
 
 ansible-playbook -i localhost.ini -K system-bootstrap.yaml
