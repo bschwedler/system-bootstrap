@@ -12,10 +12,3 @@
     - vscode
   loop: "{{ vscode_extensions }}"
 
-- name: Install Atom packages
-  shell: "apm install {{ item }}"
-  ignore_errors: yes
-  tags:
-    - atom
-    - apm
-  loop: "{{ atom_packages }}"

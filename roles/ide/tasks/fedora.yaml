@@ -6,10 +6,3 @@
   tags:
     - vscode
 
-- name: Install Atom
-  dnf:
-    name: atom
-    state: "{{ package_state }}"
-  ignore_errors: yes
-  tags:
-    - atom
