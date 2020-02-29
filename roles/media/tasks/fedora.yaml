@@ -1,8 +1,13 @@
 ---
-- name: Install Metia Playser
+- name: Install media control tools
   dnf:
     name:
-      - clementine
+      - qjackctl
+    state: "{{ package_state }}"
+
+- name: Install media players
+  dnf:
+    name:
       - mplayer
       - vlc
     state: "{{ package_state }}"
@@ -18,10 +23,6 @@
 - name: Install media editing tools
   dnf:
     name:
-      - ardour5
-      - ardour5-audiobackend-alsa
-      - ardour5-audiobackend-alsa
-      - audacity
       - ffmpeg
       - easytag
     state: "{{ package_state }}"
