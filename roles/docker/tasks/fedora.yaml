@@ -1,8 +1,0 @@
----
-- name: Install Podman
-  dnf:
-    name:
-      - podman
-      - podman-docker
-    state: "{{ package_state }}"
-

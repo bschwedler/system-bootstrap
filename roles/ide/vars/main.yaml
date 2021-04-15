@@ -9,7 +9,6 @@ vscode_extensions:
   - davidanson.vscode-markdownlint
   - dbaeumer.jshint
   - dbaeumer.vscode-eslint
-  - dhoeric.ansible-vault
   - eamodio.gitlens
   - editorconfig.editorconfig
   - eg2.vscode-npm-script
@@ -21,9 +20,7 @@ vscode_extensions:
   - golang.go
   - henoc.svgeditor
   - hookyqr.beautify
-  - humao.rest-client
   - james-yu.latex-workshop
-  - kosz78.nim
   - lextudio.restructuredtext
   - mgmcdermott.vscode-language-babel
   - misogi.ruby-rubocop
@@ -32,8 +29,6 @@ vscode_extensions:
   - ms-python.python
   - ms-toolsai.jupyter
   - ms-vscode.cpptools
-  - ms-vscode.csharp
-  - ms-vscode.go
   - ms-vscode.powershell
   - pgourlain.erlang
   - pkief.material-icon-theme
@@ -41,15 +36,14 @@ vscode_extensions:
   - rebornix.Ruby
   - redhat.java
   - redhat.vscode-yaml
-  - sozercan.slack
   - streetsidesoftware.code-spell-checker
   - subtixx.mtasa-lua
   - torn4dom4n.latex-support
   - VisualStudioExptTeam.vscodeintellicode
   - vscode-icons-team.vscode-icons
   - vscodevim.vim
-  - vscjava.vscode-java-pack
   - vscoss.vscode-ansible
   - wholroyd.jinja
+  - wingrunr21.vscode-ruby
   - wix.vscode-import-cost
 

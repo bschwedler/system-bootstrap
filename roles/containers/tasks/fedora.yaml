@@ -1,0 +1,14 @@
+---
+- name: Install Podman
+  dnf:
+    name:
+      - podman
+      - podman-docker
+      - podman-compose
+    state: "{{ package_state }}"
+
+- name: "Configure rootless Podman for {{ bootstrap_user }}"
+  shell: |
+    grep -q {{ bootstrap_user }} /etc/subuid || usermod --add-subuids 10000-75535 {{ bootstrap_user }}
+    grep -q {{ bootstrap_user }} /etc/subgid || usermod --add-subgids 10000-75535 {{ bootstrap_user }}
+    podman system migrate
