@@ -29,7 +29,6 @@ vscode_extensions:
   - ms-python.python
   - ms-toolsai.jupyter
   - ms-vscode.cpptools
-  - ms-vscode.go
   - ms-vscode.powershell
   - pgourlain.erlang
   - pkief.material-icon-theme

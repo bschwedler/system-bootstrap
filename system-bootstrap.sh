@@ -21,4 +21,4 @@ if [ -f "/etc/fedora-release" ] ; then
   sudo env "PATH=${PATH}" /usr/bin/pip3 install --prefix=/usr/local ansible
 fi
 
-ansible-playbook -i localhost.ini -K system-bootstrap.yaml
+ansible-playbook -i localhost.ini -K -e bootstrap_user=$(whoami) system-bootstrap.yaml

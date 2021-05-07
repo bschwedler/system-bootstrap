@@ -13,7 +13,7 @@
       when: package_state == "latest"
 
   roles:
-    - {role: packagemanager, tags: pacakgemanager, pkg, brew}
+    - {role: packagemanager, tags: packagemanager, dnf, yum, pkg, brew}
     - {role: utils, tags: utils}
     - {role: libraries, tags: libraries, lib}
     - {role: ssl, tags: ssl}
@@ -21,7 +21,7 @@
     - {role: ruby, tags: ruby, rb}
     - {role: javascript, tags: javascript, js}
     - {role: database, tags: database, db}
-    - {role: docker, tags: docker}
+    - {role: containers, tags: containers, podman, docker}
     - {role: kubernetes, tags: kubernetes, k8s, kube}
     - {role: virtualbox, tags: virtualbox}
     - {role: backup, tags: backup}
