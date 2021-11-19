@@ -144,7 +144,6 @@
     name: "{{ item }}"
     state: "{{ package_state_cask }}"
   loop:
-    - citrix-receiver
     - citrix-workspace
   ignore_errors: true
 
@@ -161,18 +160,24 @@
     - discord
     - microsoft-teams
     - slack
-    - skype
     - skype-for-business
 
-- name: Install OSX productivity tools
+- name: Install productivity tools
+  homebrew:
+    name: "{{ item }}"
+    state: "{{ package_state }}"
+  loop:
+    - cherrytree
+
+- name: Install OSX productivity casks
   homebrew_cask:
     name: "{{ item }}"
     state: "{{ package_state_cask }}"
   loop:
     - alfred
     - authy
+    - clipy
     - flux
-    - flycut
     - grandperspective
     - itsycal
     - lastpass
