@@ -3,11 +3,9 @@
 vscode_extensions:
   - alexkrechik.cucumberautocomplete
   - braver.vscode-solarized
-  - castwide.solargraph
   - christian-kohler.npm-intellisense
   - cssho.vscode-svgviewer
   - davidanson.vscode-markdownlint
-  - dbaeumer.jshint
   - dbaeumer.vscode-eslint
   - eamodio.gitlens
   - editorconfig.editorconfig
@@ -15,35 +13,22 @@ vscode_extensions:
   - equimper.react-native-react-redux
   - formulahendry.auto-close-tag
   - formulahendry.auto-rename-tag
-  - formulahendry.code-runner
-  - gabrielbb.vscode-lombok
   - golang.go
-  - henoc.svgeditor
-  - hookyqr.beautify
+  - hashicorp.terraform
   - james-yu.latex-workshop
   - lextudio.restructuredtext
   - mgmcdermott.vscode-language-babel
-  - misogi.ruby-rubocop
   - ms-azuretools.vscode-docker
   - ms-kubernetes-tools.vscode-kubernetes-tools
   - ms-python.python
   - ms-toolsai.jupyter
-  - ms-vscode.cpptools
   - ms-vscode.powershell
-  - pgourlain.erlang
   - pkief.material-icon-theme
   - pranaygp.vscode-css-peek
-  - rebornix.Ruby
-  - redhat.java
+  - redhat.ansible
   - redhat.vscode-yaml
   - streetsidesoftware.code-spell-checker
-  - subtixx.mtasa-lua
-  - torn4dom4n.latex-support
-  - VisualStudioExptTeam.vscodeintellicode
-  - vscode-icons-team.vscode-icons
   - vscodevim.vim
-  - vscoss.vscode-ansible
   - wholroyd.jinja
-  - wingrunr21.vscode-ruby
   - wix.vscode-import-cost
 
