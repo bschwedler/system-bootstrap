@@ -3,7 +3,6 @@
   ansible.builtin.dnf:
     name:
       - podman
-      - podman-docker
       - podman-compose
     state: "{{ package_state }}"
 
@@ -12,3 +11,17 @@
     grep -q {{ bootstrap_user }} /etc/subuid || usermod --add-subuids 10000-75535 {{ bootstrap_user }}
     grep -q {{ bootstrap_user }} /etc/subgid || usermod --add-subgids 10000-75535 {{ bootstrap_user }}
     podman system migrate
+
+- name: Install podman-docker unless we are installing Docker
+  ansible.builtin.dnf:
+    name:
+      - podman-docker
+    state: "{{ (install_docker) | ternary('absent', package_state) }}"
+
+- name: Install Docker
+  ansible.builtin.dnf:
+    name:
+      - moby-engine
+      - docker-compose
+    state: "{{ package_state }}"
+  when: install_docker
