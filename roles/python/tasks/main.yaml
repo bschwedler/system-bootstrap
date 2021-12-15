@@ -1,6 +1,6 @@
 ---
 - name: Install VirtualEnv tools
-  pip:
+  ansible.builtin.pip:
     name:
       - virtualenv
       - virtualenv-clone
@@ -10,7 +10,7 @@
   become: "{{ ansible_os_family|lower != 'darwin' }}"
 
 - name: Install testing tools
-  pip:
+  ansible.builtin.pip:
     name:
       - flake8
       - pycodestyle

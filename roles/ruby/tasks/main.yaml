@@ -4,7 +4,7 @@
   become: yes
 
 - name: Install common gems
-  gem:
+  community.general.gem:
     name: "{{ item }}"
     state: "{{ package_state }}"
     user_install: no

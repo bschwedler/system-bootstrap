@@ -1,6 +1,6 @@
 ---
 - name: Install Podman
-  dnf:
+  ansible.builtin.dnf:
     name:
       - podman
       - podman-docker
@@ -8,7 +8,7 @@
     state: "{{ package_state }}"
 
 - name: "Configure rootless Podman for {{ bootstrap_user }}"
-  shell: |
+  ansible.builtin.shell: |
     grep -q {{ bootstrap_user }} /etc/subuid || usermod --add-subuids 10000-75535 {{ bootstrap_user }}
     grep -q {{ bootstrap_user }} /etc/subgid || usermod --add-subgids 10000-75535 {{ bootstrap_user }}
     podman system migrate

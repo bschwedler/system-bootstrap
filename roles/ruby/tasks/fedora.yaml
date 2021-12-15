@@ -1,6 +1,6 @@
 ---
 - name: Install Ruby
-  dnf:
+  ansible.builtin.dnf:
     name:
       - ruby
       - ruby-devel

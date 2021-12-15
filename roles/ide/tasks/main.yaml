@@ -4,7 +4,7 @@
   become: yes
 
 - name: Install VSCode extensions
-  shell: "code --install-extension {{ item }}"
+  ansible.builtin.shell: "code --install-extension {{ item }}"
   tags:
     - vscode
   loop: "{{ vscode_extensions }}"

@@ -1,6 +1,6 @@
 ---
 - name: Install Libraries
-  dnf:
+  ansible.builtin.dnf:
     name:
       - zlib
       - zlib-devel

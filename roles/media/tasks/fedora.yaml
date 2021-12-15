@@ -1,19 +1,19 @@
 ---
 - name: Install media control tools
-  dnf:
+  ansible.builtin.dnf:
     name:
       - qjackctl
     state: "{{ package_state }}"
 
 - name: Install media players
-  dnf:
+  ansible.builtin.dnf:
     name:
       - mplayer
       - vlc
     state: "{{ package_state }}"
 
 - name: Install media cloning tools
-  dnf:
+  ansible.builtin.dnf:
     name:
       - asunder
       - k3b
@@ -21,7 +21,7 @@
     state: "{{ package_state }}"
 
 - name: Install media editing tools
-  dnf:
+  ansible.builtin.dnf:
     name:
       - ffmpeg
       - easytag

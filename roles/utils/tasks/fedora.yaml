@@ -1,6 +1,6 @@
 ---
 - name: Install shell utilities
-  dnf:
+  ansible.builtin.dnf:
     name:
       - screen
       - curl
@@ -12,21 +12,21 @@
     state: "{{ package_state }}"
 
 - name: Install git and helpers
-  dnf:
+  ansible.builtin.dnf:
     name:
       - git
       - tig
     state: "{{ package_state }}"
 
 - name: Install vim
-  dnf:
+  ansible.builtin.dnf:
     name:
       - vim
       - neovim
     state: "{{ package_state }}"
 
 - name: Install additional CLI utilities
-  dnf:
+  ansible.builtin.dnf:
     name:
       - ack
       - jq
