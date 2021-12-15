@@ -1,9 +1,0 @@
----
-- name: Upgrade Homebrew
-  homebrew:
-    update_homebrew: yes
-
-- name: Tap homebrew/cask
-  homebrew_tap:
-    name: homebrew/cask
-    state: present

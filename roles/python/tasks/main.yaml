@@ -1,16 +1,4 @@
 ---
-- import_tasks: osx.yaml
-  when: ansible_os_family|lower == 'darwin'
-
-- name: Install Ansible
-  pip:
-    name:
-      - ansible
-    executable: /usr/local/bin/pip3
-    extra_args: "--prefix=/usr/local"
-    state: "{{ package_state }}"
-  become: "{{ ansible_os_family|lower != 'darwin' }}"
-
 - name: Install VirtualEnv tools
   pip:
     name:

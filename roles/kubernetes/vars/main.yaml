@@ -1,4 +1,0 @@
----
-kubectl_watcher_version: 1.4.7
-kubectl_watcher_download_url_linux: https://storage.googleapis.com/kubernetes-release/release/v{{kubectl_watcher_version}}/bin/linux/amd64/kubectl
-kubectl_watcher_download_url_osx: https://storage.googleapis.com/kubernetes-release/release/v{{kubectl_watcher_version}}/bin/darwin/amd64/kubectl

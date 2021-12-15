@@ -4,16 +4,9 @@
   vars:
     # Pass 'latest' via command line to upgrade packages
     package_state: present
-    package_state_cask: "{{ package_state }}"
-
-  pre_tasks:
-    - name: Set package state variables
-      set_fact:
-        package_state_cask: upgraded
-      when: package_state == "latest"
 
   roles:
-    - {role: packagemanager, tags: packagemanager, dnf, yum, pkg, brew}
+    - {role: packagemanager, tags: packagemanager, dnf, yum, pkg}
     - {role: utils, tags: utils}
     - {role: libraries, tags: libraries, lib}
     - {role: ssl, tags: ssl}
@@ -23,7 +16,6 @@
     - {role: database, tags: database, db}
     - {role: containers, tags: containers, podman, docker}
     - {role: kubernetes, tags: kubernetes, k8s, kube}
-    - {role: virtualbox, tags: virtualbox}
     - {role: backup, tags: backup}
     - {role: ide, tags: ide}
     - {role: media, tags: media}

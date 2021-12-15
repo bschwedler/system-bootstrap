@@ -1,7 +1,0 @@
----
-- name: Install openssl
-  homebrew:
-    name: "{{ item }}"
-    state: "{{ package_state }}"
-  loop:
-    - openssl

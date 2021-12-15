@@ -1,7 +1,0 @@
----
-- name: Install py2
-  homebrew:
-    name: "{{ item }}"
-    state: "{{ package_state }}"
-  loop:
-    - python@2

@@ -1,9 +1,0 @@
----
-- name: Install media applicatinos
-  homebrew_cask:
-    name: "{{ item }}"
-    state: "{{ package_state_cask }}"
-  loop:
-    - pocket-casts
-    - spotify
-    - vlc

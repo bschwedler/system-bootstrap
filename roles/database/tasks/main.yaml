@@ -1,3 +1,1 @@
 ---
-- import_tasks: osx.yaml
-  when: ansible_os_family|lower == 'darwin'

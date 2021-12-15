@@ -3,9 +3,6 @@
   when: ansible_distribution|lower == 'fedora'
   become: yes
 
-- import_tasks: osx.yaml
-  when: ansible_os_family|lower == 'darwin'
-
 - name: Install VSCode extensions
   shell: "code --install-extension {{ item }}"
   tags:
