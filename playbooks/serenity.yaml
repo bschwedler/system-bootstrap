@@ -1,0 +1,62 @@
+---
+
+- hosts: all
+  roles:
+    - role: packagemanager
+      tags:
+        - packagemanager
+        - pkg
+    - role: utils
+      tags:
+        - utils
+    - role: libraries
+      tags:
+        - libraries
+        - lib
+
+- hosts: media
+  roles:
+    - role: media
+      tags:
+        - media
+
+- hosts: dev
+  roles:
+    - role: python
+      tags:
+        - python
+        - py
+    - role: ruby
+      tags:
+        - ruby
+        - rb
+    - role: javascript
+      tags:
+        - javascript
+        - js
+    - role: database
+      tags:
+        - database
+        - db
+    - role: containers
+      tags:
+        - containers
+        - podman
+        - docker
+    - role: kubernetes
+      tags:
+        - kubernetes
+        - k8s
+        - kube
+    - role: ide
+      tags:
+        - ide
+
+- hosts: backup
+  roles:
+    - role: backup
+      tags:
+        - backup
+
+
+

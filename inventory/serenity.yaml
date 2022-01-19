@@ -1,0 +1,33 @@
+---
+all:
+  hosts:
+    haven:
+      ansible_host: haven.serenity
+    jayne:
+      ansible_host: jayne.serenity
+      install_docker: true
+    mal:
+      ansible_host: mal.serenity
+    yosafbridge:
+      ansible_host: yosafbridge.serenity
+  vars:
+    package_state: present
+  children:
+    backup:
+      mal:
+    desktop:
+      hosts:
+        jayne:
+        mal:
+        yosafbridge:
+      children:
+        dev:
+          hosts:
+            jayne:
+        media:
+          hosts:
+            mal:
+            yosafbridge:
+    hypervisors:
+      hosts:
+        jayne:
