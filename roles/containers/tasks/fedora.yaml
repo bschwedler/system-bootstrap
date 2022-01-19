@@ -1,27 +1,37 @@
 ---
-- name: Install Podman
-  ansible.builtin.dnf:
-    name:
-      - podman
-      - podman-compose
-    state: "{{ package_state }}"
+- name: Podman
+  tags:
+    - podman
+  block:
+    - name: Install Podman
+      ansible.builtin.package:
+        name:
+          - podman
+          - podman-compose
+        state: "{{ package_state }}"
 
-- name: "Configure rootless Podman for {{ bootstrap_user }}"
-  ansible.builtin.shell: |
-    grep -q {{ bootstrap_user }} /etc/subuid || usermod --add-subuids 10000-75535 {{ bootstrap_user }}
-    grep -q {{ bootstrap_user }} /etc/subgid || usermod --add-subgids 10000-75535 {{ bootstrap_user }}
-    podman system migrate
+    - name: "Configure rootless Podman for {{ podman_user }}"
+      ansible.builtin.shell: |
+        echo {{ podman_user }}
+        # grep -q {{ podman_user }} /etc/subuid || usermod --add-subuids 10000-75535 {{ podman_user }}
+        # grep -q {{ podman_user }} /etc/subgid || usermod --add-subgids 10000-75535 {{ podman_user }}
+        # podman system migrate
 
-- name: Install podman-docker unless we are installing Docker
-  ansible.builtin.dnf:
-    name:
-      - podman-docker
-    state: "{{ (install_docker) | ternary('absent', package_state) }}"
+    - name: Install podman-docker unless we are installing Docker
+      ansible.builtin.package:
+        name:
+          - podman-docker
+        state: "{{ (install_docker) | ternary('absent', package_state) }}"
 
-- name: Install Docker
-  ansible.builtin.dnf:
-    name:
-      - moby-engine
-      - docker-compose
-    state: "{{ package_state }}"
+- name: Docker
+  tags:
+    - docker
   when: install_docker
+  block:
+    - name: Install Docker
+      ansible.builtin.package:
+        name:
+          - moby-engine
+          - docker-compose
+        state: "{{ package_state }}"
+

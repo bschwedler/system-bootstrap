@@ -44,8 +44,6 @@
     - role: containers
       tags:
         - containers
-        - podman
-        - docker
     - role: kubernetes
       tags:
         - kubernetes

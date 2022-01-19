@@ -1,2 +1,2 @@
 ---
-install_docker: true
+podman_user: "{{ bootstrap_user | default(ansible_user_id) }}"
