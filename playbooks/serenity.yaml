@@ -19,19 +19,16 @@
     - role: browsers
       tags:
         - browsers
-
-- hosts: media
-  roles:
-    - role: media
+    - role: ide
       tags:
-        - media
-
-- hosts: dev
-  roles:
+        - ide
     - role: python
       tags:
         - python
         - py
+
+- hosts: dev
+  roles:
     - role: ruby
       tags:
         - ruby
@@ -54,9 +51,6 @@
         - kubernetes
         - k8s
         - kube
-    - role: ide
-      tags:
-        - ide
 
 - hosts: backup
   roles:
@@ -64,5 +58,10 @@
       tags:
         - backup
 
+- hosts: media
+  roles:
+    - role: media
+      tags:
+        - media
 
 
