@@ -1,0 +1,23 @@
+---
+
+- name: Brave Browser
+  tags:
+    - brave
+    - brave-browser
+  become: yes
+  block:
+    - name: Enable Brave Browser repository
+      ansible.builtin.yum_repository:
+        name: brave-browser
+        file: brave-browser
+        description: Brave Browser
+        baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+        gpgcheck: yes
+        gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+        enabled: yes
+        state: present
+      when: ansible_os_family|lower == "redhat" or ansible_os_family|lower == "centos"
+
+    - name: Install Brave Browser
+      ansible.builtin.package:
+        name: brave-browser

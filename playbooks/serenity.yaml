@@ -14,6 +14,12 @@
         - libraries
         - lib
 
+- hosts: desktop
+  roles:
+    - role: browsers
+      tags:
+        - browsers
+
 - hosts: media
   roles:
     - role: media
