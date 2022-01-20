@@ -22,7 +22,9 @@ vscode_extensions:
   - ms-kubernetes-tools.vscode-kubernetes-tools
   - ms-python.python
   - ms-toolsai.jupyter
+  - ms-vscode.cpptools-extension-pack
   - ms-vscode.powershell
+  - ms-vscode-remote.remote-containers
   - pkief.material-icon-theme
   - pranaygp.vscode-css-peek
   - redhat.ansible
