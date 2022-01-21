@@ -1,0 +1,10 @@
+---
+- name: Golang
+  tags:
+    - go
+    - golang
+  become: yes
+  block:
+    - name: Install Golang
+      ansible.builtin.package:
+        name: golang

@@ -29,6 +29,7 @@
 
 - hosts: dev
   roles:
+    - role: golang
     - role: ruby
       tags:
         - ruby
