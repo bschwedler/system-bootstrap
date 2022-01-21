@@ -1,0 +1,37 @@
+---
+- name: C++
+  tags:
+    - cpp
+    - c++
+  become: yes
+  block:
+    - name: Install gcc
+      ansible.builtin.package:
+        name:
+          - gcc
+          - gcc-c++
+
+
+    - name: Install LLVM clang
+      ansible.builtin.package:
+        name:
+          - clang
+        state: "{{ package_state }}"
+
+    - name: Install cmake
+      ansible.builtin.package:
+        name:
+          - cmake
+          - make
+        state: "{{ package_state }}"
+
+    - name: Install c++ development libraries
+      ansible.builtin.package:
+        name:
+          - boost-devel
+          - bzip2-devel
+          - libuser-devel
+          - libuuid-devel
+          - openssl-devel
+          - zlib-devel
+        state: "{{ package_state }}"

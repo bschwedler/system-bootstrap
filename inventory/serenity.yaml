@@ -24,6 +24,11 @@ all:
         dev:
           hosts:
             jayne:
+            mal:
+          children:
+            rstudio:
+              hosts:
+                jayne:
         media:
           hosts:
             mal:
