@@ -21,3 +21,4 @@
     - name: Install Brave Browser
       ansible.builtin.package:
         name: brave-browser
+        state: "{{ package_state }}"

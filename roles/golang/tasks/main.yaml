@@ -8,3 +8,4 @@
     - name: Install Golang
       ansible.builtin.package:
         name: golang
+        state: "{{ package_state }}"
