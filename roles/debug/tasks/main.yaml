@@ -1,0 +1,24 @@
+---
+- name: "Debug"
+  tags:
+    - debug
+  block:
+    - name: Ansible User information
+      ansible.builtin.debug:
+        verbosity: 2
+        msg:
+          - "ansible_user_id:       {{ ansible_user_id }}"
+          - "ansible_user_uid:      {{ ansible_user_uid }}"
+          - "ansible_user_gid:      {{ ansible_user_gid }}"
+          - "ansible_user_shell:    {{ ansible_user_shell }}"
+
+    - name: Ansible OS information
+      ansible.builtin.debug:
+        verbosity: 2
+        msg:
+          - "ansible_system:                {{ ansible_system }}"
+          - "ansible_architecture:          {{ ansible_architecture }}"
+          - "ansible_os_family:             {{ ansible_os_family }}"
+          - "ansible_distribution:          {{ ansible_distribution }}"
+          - "ansible_distribution_version:  {{ ansible_distribution_version }}"
+          - "ansible_pkg_mgr:               {{ ansible_pkg_mgr }}"
