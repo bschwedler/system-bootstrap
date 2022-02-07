@@ -1,17 +1,32 @@
 ---
-- import_tasks: fedora.yaml
-  when: ansible_distribution|lower == 'fedora'
+- name: Ruby
+  tags:
+    - ruby
+    - rb
   become: yes
+  block:
+    - name: Install Ruby
+      ansible.builtin.package:
+        name:
+          - ruby
+          - ruby-devel
+          - rubygem-json
+        state: "{{ package_state }}"
 
-- name: Install common gems
-  community.general.gem:
-    name: "{{ item }}"
-    state: "{{ package_state }}"
-    user_install: no
-  loop:
-    - bundler
-    - json
-    - rspec
-    - rubocop
-    - solargraph
-  become: yes
+    - name: Install Bundler.
+      gem:
+        name: bundler
+        state: "{{ package_state }}"
+        user_install: no
+
+    - name: Install common gems
+      community.general.gem:
+        name: "{{ item }}"
+        state: "{{ package_state }}"
+        user_install: no
+      loop:
+        - bundler
+        - json
+        - rspec
+        - rubocop
+        - solargraph

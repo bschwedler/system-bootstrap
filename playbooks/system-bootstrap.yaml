@@ -7,15 +7,5 @@
 
   roles:
     - role: packagemanager
-      tags:
-        - packagemanager
-        - pkg
-        - dnf
-        - yum
     - role: utils
-      tags:
-         - utils
     - role: libraries
-      tags:
-        - libraries
-        - lib

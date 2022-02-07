@@ -1,24 +1,32 @@
 ---
-- name: Install VirtualEnv tools
-  ansible.builtin.pip:
-    name:
-      - virtualenv
-      - virtualenv-clone
-      - virtualenvwrapper
-    executable: /usr/local/bin/pip3
-    state: "{{ package_state }}"
-  become: "{{ ansible_os_family|lower != 'darwin' }}"
+- name: Python
+  tags:
+    - python
+    - py
+  block:
+    - name: Install Pipenv and VirtualEnv tools
+      ansible.builtin.pip:
+        name:
+          - pipenv
+          - virtualenv
+          - virtualenv-clone
+          - virtualenvwrapper
+        executable: /usr/local/bin/pip3
+        state: "{{ package_state }}"
+      # Install in system python
+      become: yes
 
-- name: Install testing tools
-  ansible.builtin.pip:
-    name:
-      - flake8
-      - pycodestyle
-      - pylint
-      - pytest
-      - pytest-flake8
-      - pytest-pycodestyle
-      - pytest-pylint
-    executable: /usr/local/bin/pip3
-    state: "{{ package_state }}"
-  become: "{{ ansible_os_family|lower != 'darwin' }}"
+    - name: Install testing tools
+      ansible.builtin.pip:
+        name:
+          - flake8
+          - pycodestyle
+          - pylint
+          - pytest
+          - pytest-flake8
+          - pytest-pycodestyle
+          - pytest-pylint
+        executable: /usr/local/bin/pip3
+        state: "{{ package_state }}"
+      # Do not install in system python
+      become: no

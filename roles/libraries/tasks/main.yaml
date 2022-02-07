@@ -1,4 +1,12 @@
 ---
-- import_tasks: fedora.yaml
-  when: ansible_distribution|lower == 'fedora'
+- name: Libraries
+  tags:
+    - lib
   become: yes
+  block:
+    - name: ZLib
+      ansible.builtin.package:
+        name:
+          - zlib
+          - zlib-devel
+        state: "{{ package_state }}"

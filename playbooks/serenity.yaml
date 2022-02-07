@@ -2,67 +2,41 @@
 
 - hosts: all
   roles:
+    - role: debug
     - role: packagemanager
-      tags:
-        - packagemanager
-        - pkg
     - role: utils
-      tags:
-        - utils
     - role: libraries
-      tags:
-        - libraries
-        - lib
+
+- hosts: backup
+  roles:
+    - role: backup
 
 - hosts: desktop
+  tags:
+    - desktop
   roles:
+    - role: tools
     - role: browsers
-      tags:
-        - browsers
     - role: ide
-      tags:
-        - ide
     - role: python
-      tags:
-        - python
-        - py
+
+- hosts: media
+  roles:
+    - role: media
 
 - hosts: dev
   roles:
     - role: golang
     - role: ruby
-      tags:
-        - ruby
-        - rb
     - role: javascript
-      tags:
-        - javascript
-        - js
     - role: database
-      tags:
-        - database
-        - db
     - role: containers
-      tags:
-        - containers
     - role: kubernetes
-      tags:
-        - kubernetes
-        - k8s
-        - kube
-
-- hosts: backup
-  roles:
-    - role: backup
-      tags:
-        - backup
-
-- hosts: media
-  roles:
-    - role: media
-      tags:
-        - media
 
 - hosts: rstudio
   roles:
     - role: cpp
+
+- hosts: hypervisors
+  roles:
+    - role: virtualization

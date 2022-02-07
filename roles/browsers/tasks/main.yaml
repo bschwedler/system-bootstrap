@@ -1,7 +1,7 @@
 ---
-
 - name: Brave Browser
   tags:
+    - browser
     - brave
     - brave-browser
   become: yes
@@ -16,7 +16,7 @@
         gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
         enabled: yes
         state: present
-      when: ansible_os_family|lower == "redhat" or ansible_os_family|lower == "centos"
+      when: ansible_os_family == "RedHat"
 
     - name: Install Brave Browser
       ansible.builtin.package:

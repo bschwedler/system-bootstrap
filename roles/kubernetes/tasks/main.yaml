@@ -1,4 +1,22 @@
 ---
-- import_tasks: fedora.yaml
-  when: ansible_distribution|lower == 'fedora'
+- name: Kubernetes
+  tags:
+    - kubernetes
+    - kube
+    - k8s
   become: yes
+  block:
+    - name: Install Kubernetes CLI
+      ansible.builtin.package:
+        name:
+          - kubernetes-client
+        state: "{{ package_state }}"
+
+    - name: Install Helm
+      tags:
+        - helm
+      ansible.builtin.package:
+        name:
+          - helm
+        state: "{{ package_state }}"
+

@@ -1,6 +1,8 @@
 ---
 all:
   hosts:
+    badger:
+      ansible_host: badger.serenity
     haven:
       ansible_host: haven.serenity
     jayne:
@@ -11,6 +13,7 @@ all:
     yosafbridge:
       ansible_host: yosafbridge.serenity
   vars:
+    bootstrap_user: bschwedler
     package_state: present
   children:
     backup:
@@ -21,18 +24,20 @@ all:
         mal:
         yosafbridge:
       children:
-        dev:
-          hosts:
-            jayne:
-            mal:
-          children:
-            rstudio:
-              hosts:
-                jayne:
         media:
           hosts:
             mal:
             yosafbridge:
+    dev:
+      hosts:
+        badger:
+        jayne:
+        mal:
+      children:
+        rstudio:
+          hosts:
+            badger:
+            jayne:
     hypervisors:
       hosts:
         jayne:

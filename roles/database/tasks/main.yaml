@@ -1,1 +1,23 @@
 ---
+- name: Database
+  tags:
+    - database
+    - db
+  become: yes
+  block:
+    - name: Install PostgreSQL
+      tags:
+        - postgresql
+        - psql
+      ansible.builtin.package:
+        name:
+          - postgresql
+        state: "{{ package_state }}"
+
+    - name: Install SQLite
+      tags:
+        - sqlite
+      ansible.builtin.package:
+        name:
+          - sqlite
+        state: "{{ package_state }}"

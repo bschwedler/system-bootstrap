@@ -1,6 +1,0 @@
----
-- name: Install Kubernetes
-  ansible.builtin.dnf:
-    name:
-      - kubernetes-client
-    state: "{{ package_state }}"

@@ -1,0 +1,34 @@
+---
+- name: Virtualization Tools
+  tags:
+    - virtualization
+    - vms
+  become: yes
+  block:
+    - name: Install KVM
+      tags:
+        - kvm
+      ansible.builtin.package:
+        name:
+          - qemu-kvm
+          - libvirt
+          - virt-manager
+          - virt-install
+          - libguestfs
+          - guestfs-tools
+
+    - name: Ensure libvirtd enabled and started
+      tags:
+        - kvm
+      ansible.builtin.systemd:
+        name: libvirtd.service
+        enabled: yes
+        state: started
+
+    - name: Install Vagrant
+      tags:
+        - vagrant
+      ansible.builtin.package:
+        name:
+          - vagrant
+          - vagrant-libvirt

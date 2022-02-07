@@ -1,8 +1,0 @@
----
-- name: Install Libraries
-  ansible.builtin.dnf:
-    name:
-      - zlib
-      - zlib-devel
-    state: "{{ package_state }}"
-

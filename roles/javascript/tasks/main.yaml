@@ -1,1 +1,23 @@
 ---
+- name: Javascript
+  tags:
+    - javascript
+    - js
+  become: yes
+  block:
+    - name: Install Nodejs
+      tags:
+        - nodejs
+        - node
+        - npm
+      ansible.builtin.package:
+        name:
+          - nodejs
+        state: "{{ package_state }}"
+
+    - name: Install Yarn
+      tags:
+        - yarn
+      community.general.npm:
+        name: yarn
+        global: yes

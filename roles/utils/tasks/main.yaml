@@ -1,4 +1,43 @@
 ---
-- import_tasks: fedora.yaml
-  when: ansible_distribution|lower == 'fedora'
+- name: Utils
+  tags:
+    - utils
   become: yes
+  block:
+    - name: Install shell utilities
+      ansible.builtin.package:
+        name:
+          - screen
+          - curl
+          - rsync
+          - telnet
+          - tmux
+          - tree
+          - wget
+        state: "{{ package_state }}"
+
+    - name: Install git and helpers
+      ansible.builtin.package:
+        name:
+          - git
+          - tig
+        state: "{{ package_state }}"
+
+    - name: Install vim
+      ansible.builtin.package:
+        name:
+          - vim
+          - neovim
+        state: "{{ package_state }}"
+
+    - name: Install additional CLI utilities
+      ansible.builtin.package:
+        name:
+          - ack
+          - jq
+          - httpie
+          - openvpn
+          - perl
+          - pwgen
+          - speedtest-cli
+        state: "{{ package_state }}"

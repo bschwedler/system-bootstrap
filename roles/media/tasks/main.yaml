@@ -1,4 +1,33 @@
 ---
-- import_tasks: fedora.yaml
-  when: ansible_distribution|lower == 'fedora'
+- name: Media
+  tags:
+    - media
   become: yes
+  block:
+    - name: Install media control tools
+      ansible.builtin.dnf:
+        name:
+          - qjackctl
+        state: "{{ package_state }}"
+
+    - name: Install media players
+      ansible.builtin.dnf:
+        name:
+          - mplayer
+          - vlc
+        state: "{{ package_state }}"
+
+    - name: Install media cloning tools
+      ansible.builtin.dnf:
+        name:
+          - asunder
+          - k3b
+          - k9copy
+        state: "{{ package_state }}"
+
+    - name: Install media editing tools
+      ansible.builtin.dnf:
+        name:
+          - ffmpeg
+          - easytag
+        state: "{{ package_state }}"
