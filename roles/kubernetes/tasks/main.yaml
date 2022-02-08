@@ -6,11 +6,44 @@
     - k8s
   become: yes
   block:
-    - name: Install Kubernetes CLI
+    - name: Install kubectl - RedHat Family
+      when: ansible_os_family == 'RedHat'
       ansible.builtin.package:
         name:
           - kubernetes-client
         state: "{{ package_state }}"
+
+    - name: Kubernetes - Debian Family
+      when: ansible_os_family == 'Debian'
+      block:
+        - name: Add Google Cloud Apt signing Key
+          ansible.builtin.apt_key:
+            url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+            state: present
+
+        - name: Add Kuberntes Apt repository
+          ansible.builtin.apt_repository:
+            repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+            state: present
+
+        - name: Install kubectl - Debian Family
+          ansible.builtin.package:
+            name:
+              - kubectl
+            state: "{{ package_state }}"
+
+    - name: Helm Apt repository - Debian Family
+      when: ansible_os_family == 'Debian'
+      block:
+        - name: Helm Apt signing Key
+          ansible.builtin.apt_key:
+            url: https://baltocdn.com/helm/signing.asc
+            state: present
+
+        - name: Add Kuberntes Apt repository
+          ansible.builtin.apt_repository:
+            repo: deb https://baltocdn.com/helm/stable/debian/ all main
+            state: present
 
     - name: Install Helm
       tags:

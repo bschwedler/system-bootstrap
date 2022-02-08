@@ -23,6 +23,12 @@
           - tig
         state: "{{ package_state }}"
 
+    - name: Install make
+      ansible.builtin.package:
+        name:
+          - make
+        state: "{{ package_state }}"
+
     - name: Install vim
       ansible.builtin.package:
         name:

@@ -4,6 +4,7 @@
     - containers
     - podman
   become: yes
+  when: ansible_os_family == 'RedHat'
   block:
     - name: Install Podman
       ansible.builtin.package:

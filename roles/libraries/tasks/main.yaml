@@ -4,9 +4,18 @@
     - lib
   become: yes
   block:
-    - name: ZLib
+    - name: ZLib - RedHat Family
+      when: ansible_os_family == 'RedHat'
       ansible.builtin.package:
         name:
           - zlib
           - zlib-devel
+        state: "{{ package_state }}"
+
+    - name: ZLib - Debian Family
+      when: ansible_os_family == 'Debian'
+      ansible.builtin.package:
+        name:
+          - zlib1g
+          - zlib1g-dev
         state: "{{ package_state }}"

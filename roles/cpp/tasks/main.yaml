@@ -1,16 +1,23 @@
 ---
-- name: C++
+- name: "C++"
   tags:
     - cpp
     - c++
   become: yes
   block:
-    - name: Install gcc
+    - name: Install gcc - RedHat Family
+      when: ansible_os_family == 'RedHat'
       ansible.builtin.package:
         name:
           - gcc
           - gcc-c++
+        state: "{{ package_state }}"
 
+    - name: Install build-essential - Debian Family
+      when: ansible_os_family == 'Debian'
+      ansible.builtin.package:
+        name:
+          - build-essential
 
     - name: Install LLVM clang
       ansible.builtin.package:
@@ -22,10 +29,10 @@
       ansible.builtin.package:
         name:
           - cmake
-          - make
         state: "{{ package_state }}"
 
-    - name: Install c++ development libraries
+    - name: Development Libraries - RedHat Family
+      when: ansible_os_family == 'RedHat'
       ansible.builtin.package:
         name:
           - boost-devel
@@ -34,4 +41,23 @@
           - libuuid-devel
           - openssl-devel
           - zlib-devel
+        state: "{{ package_state }}"
+
+    - name: Development Libraries - Debian Family
+      when: ansible_os_family == 'Debian'
+      ansible.builtin.package:
+        name:
+          - libacl1-dev
+          - libattr1-dev
+          - libboost-dev
+          - libbz2-dev
+          - libcap-dev
+          - libcurl4-openssl-dev
+          - libegl1-mesa
+          - libfuse2
+          - libgl1-mesa-dev
+          - libgtk-3-0
+          - libssl-dev
+          - libuser1-dev
+          - libxslt1-dev
         state: "{{ package_state }}"

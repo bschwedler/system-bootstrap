@@ -5,16 +5,24 @@
     - rb
   become: yes
   block:
-    - name: Install Ruby
+    - name: Install Ruby - RedHat Family
+      when: ansible_os_family == 'RedHat'
       ansible.builtin.package:
         name:
           - ruby
           - ruby-devel
-          - rubygem-json
         state: "{{ package_state }}"
 
-    - name: Install Bundler.
-      gem:
+    - name: Install Ruby - Debian Family
+      when: ansible_os_family == 'Debian'
+      ansible.builtin.package:
+        name:
+          - ruby
+          - ruby-dev
+        state: "{{ package_state }}"
+
+    - name: Install Bundler
+      community.general.gem:
         name: bundler
         state: "{{ package_state }}"
         user_install: no
