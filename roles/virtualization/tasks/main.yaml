@@ -25,6 +25,17 @@
         enabled: yes
         state: started
 
+    - name: Allow NFS in libvirt zone
+      tags:
+        - kvm
+        - firewall
+      ansible.posix.firewalld:
+        zone: libvirt
+        service: nfs
+        immediate: yes
+        permanent: yes
+        state: enabled
+
     - name: Install Vagrant
       tags:
         - vagrant
