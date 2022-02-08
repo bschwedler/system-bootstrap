@@ -35,7 +35,6 @@
       when: ansible_os_family == 'RedHat'
       ansible.builtin.package:
         name:
-          - boost-devel
           - bzip2-devel
           - libuser-devel
           - libuuid-devel
@@ -49,7 +48,6 @@
         name:
           - libacl1-dev
           - libattr1-dev
-          - libboost-dev
           - libbz2-dev
           - libcap-dev
           - libcurl4-openssl-dev
@@ -61,3 +59,29 @@
           - libuser1-dev
           - libxslt1-dev
         state: "{{ package_state }}"
+
+- name: Boost
+  tags:
+    - cpp
+    - c++
+    - boost
+  become: yes
+  block:
+    - name: Boost Libraries - RedHat Family
+      when: ansible_os_family == 'RedHat'
+      block:
+        - name: Boost Development
+          ansible.builtin.package:
+            name:
+              - boost-devel
+            state: "{{ package_state }}"
+
+    - name: Boost Libraries - Debian Family
+      when: ansible_os_family == 'Debian'
+      block:
+        - name: Boost Development
+          ansible.builtin.package:
+            name:
+              - libboost-dev
+              - libboost-all-dev
+            state: "{{ package_state }}"
