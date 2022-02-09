@@ -1,0 +1,3 @@
+---
+# https://github.com/gantsign/ansible-role-golang#role-variables
+golang_gopath: '$HOME/.go'

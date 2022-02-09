@@ -3,9 +3,24 @@
   tags:
     - go
     - golang
-  become: yes
   block:
-    - name: Install Golang
+    - name: Remove system golang
+      become: yes
       ansible.builtin.package:
-        name: golang
-        state: "{{ package_state }}"
+        name:
+          - golang
+        state: absent
+
+    - name: Install Golang
+      include_role:
+        name: gantsign.golang
+
+    - name: Create /opt/go/current symlink
+      become: yes
+      ansible.builtin.file:
+        src: "{{ ansible_local.golang.general.home }}"
+        dest: /opt/go/current
+        force: yes
+        owner: root
+        group: root
+        state: link
