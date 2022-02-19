@@ -54,9 +54,12 @@
           - libegl1-mesa
           - libfuse2
           - libgl1-mesa-dev
+          - libglib2.0-dev
           - libgtk-3-0
+          - libnss3
           - libssl-dev
           - libuser1-dev
+          - libxml2-dev
           - libxslt1-dev
         state: "{{ package_state }}"
 
